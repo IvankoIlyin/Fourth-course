@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Library "Flower"</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Reader/my_book_reader/my_book_reader.css" type="text/css">
+	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<style>
+        body {
+            background-size: cover;
+            background: linear-gradient(to right, #ec6ead, #FFDCB9BF) no-repeat fixed;
+        }
+
+        header {
+            background-color: #ffb366;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-primary,
+        .btn-danger {
+            margin-left: 10px;
+        }
+
+        .form_book {
+            max-width: 350px;
+            margin: 5% auto 0;
+            padding: 10px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 220, 185, 0.75);
+
+        }
+
+        .form_book label {
+            font-weight: 600;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .date-label{
+            color: rgba(0,0,0,0.5);
+            font-size: 1rem;
+
+        }
+
+        label {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+
+        #rating {
+            border: 2px solid #3498db;
+            border-radius: 15px;
+            background-color: #f5f5f5;
+            width: auto;
+            max-width: 100%;
+            padding: 5px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        label[for="rating"] {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        #rating:focus {
+            border-color: #e74c3c;
+        }
+
+        #setRatingButton {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 0.75rem;
+            margin-bottom: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #setRatingButton:hover {
+            background-color: #c0392b;
+        }
+
+
+        #sortButton {
+            background-color: #3498db;
+            color: white;
+            border: 1px solid #3498db;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        #sortButton:hover {
+            background-color: #2980b9;
+            border-color: #2980b9;
+        }
+
+        #returnButton{
+            background-color: #3498db;
+            color: white;
+            border: 1px solid #3498db;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        .curr_book{
+            background-color: rgba(248, 255, 140, 1);
+            border-radius: 75px;
+        }
+
+
+
+
+    </style>
+</head>
+
+<body class="text-center">
+<header>
+		<a th:href="@{/home_page}">
+			<h1>Library "Flower" </h1>
+		</a>
+        <div class="user-actions">
+             <form action="#" th:action="@{/my_books}" method="get">
+                <button class="btn btn-primary">My Books</button>
+            </form>
+            
+			<form action="#" th:action="@{/logout}" method="get">
+                <button class="btn btn-danger">Logout</button>
+			</form>
+            
+        </div>
+    </header>
+    <form class="form_book">
+	<label>My Book:</label>
+	<br>
+        <button class="btn btn-secondary" name="sort_btn" id="sortButton">Sort by Date</button>
+        <ul>
+            <li class="curr_book" th:each="book : ${books}" th:text="${book}">
+                <form method="POST" th:action="@{'/'+ ${book_list}}">
+                    <a th:href="@{'/book/' + ${book.id}}}">
+                    <label class="date-label" th:text="${book.dateTaken}">time</label>
+                    <label>Book title:</label>
+                    <label th:text="${book.title}" class="book-title">title</label>
+                     <br>
+                    <label>Authors:</label>
+                    <label th:text="${book.author}">author</label>
+                </a>
+                    <br>
+                    <label for="rating">Rating:</label>
+					<script>
+						  document.addEventListener("DOMContentLoaded", function() {
+							var selectElement = document.getElementById("rating");
+							selectElement.selectedIndex = -1;
+						  });
+						</script>
+						
+					<select id="rating" name="rating" required>
+						<option value="5">&#9733&#9733&#9733&#9733&#9733</option>
+						<option value="4">&#9733&#9733&#9733&#9733</option>
+						<option value="3">&#9733&#9733&#9733</option>
+						<option value="2">&#9733&#9733</option>
+						<option value="1">&#9733</option>	
+					</select>
+						
+					<button class="btn btn-lg btn-primary" type="button" id="setRatingButton" name="rate_btn">Set Rating</button>
+                    <br>
+					<button class="btn btn-lg btn-primary" id="returnButton" type="button" id="setRatingButton" name="return_btn">Return</button>
+                </form>
+				<br>
+            </li>
+        </ul>
+    </form>
+	 <script>
+        // Используем jQuery для обработки события изменения значения в выпадающем списке
+        $(document).ready(function () {
+            $('#rating').change(function () {
+                // Получаем выбранное значение
+                var rating = $(this).val();
+				console.log(rating)
+                // Отправляем AJAX-запрос на сервер
+                $.ajax({
+                    type: 'POST',
+                    url: '/processSelect',
+                    data: { rating: rating },
+                    success: function (data) {
+                        console.log('Server response: ' + data);
+                        // Можно добавить дополнительные действия с ответом от сервера
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
