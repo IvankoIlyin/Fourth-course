@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="585f392a-b0da-4ce6-8b90-fd5f79a5cd5a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lab2/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../3D/lab1/untitled.blend" beforeDir="false" afterPath="$PROJECT_DIR$/../../3D/lab1/untitled.blend" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../3D/lab1/untitled.blend1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project_1/video/Untitled.veg" beforeDir="false" afterPath="$PROJECT_DIR$/../project_1/video/Untitled.veg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project_1/video/Untitled.veg.bak" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +16,15 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="19" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectId" id="2YdPNNZwJs2YzbdSSRfoykQMRp9" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -30,15 +35,32 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.go.format.on.save.advertiser.fired": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
+    "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/University/Fourth-course/multimedia/lab2/lab2",
-    "ruby.rails.projectView.checked": "true"
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ruby.rails.projectView.checked": "true",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.runner",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-19.0.2-corretto-19.0.2-3183f394aec4-f0552fc0" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,6 +70,8 @@
       <option name="presentableId" value="Default" />
       <updated>1700852443103</updated>
       <workItem from="1700852444390" duration="15000" />
+      <workItem from="1702475786164" duration="77000" />
+      <workItem from="1702476412944" duration="413000" />
     </task>
     <servers />
   </component>
