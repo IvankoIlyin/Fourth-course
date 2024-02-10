@@ -137,49 +137,225 @@ import numpy as np
 # task_3_numpy()
 
 
-def plus_matrix(matrix_a, matrix_b):
-    result = []
-    for i in range(len(matrix_a)):
-        row = []
-        for j in range(len(matrix_a[0])):
-            row.append(matrix_a[i][j] + matrix_b[i][j])
-        result.append(row)
-    return result
+# def plus_matrix(matrix_a, matrix_b):
+#     result = []
+#     for i in range(len(matrix_a)):
+#         row = []
+#         for j in range(len(matrix_a[0])):
+#             row.append(matrix_a[i][j] + matrix_b[i][j])
+#         result.append(row)
+#     return result
+#
+# def subtract_matrix(matrix_a, matrix_b):
+#     result = []
+#     for i in range(len(matrix_a)):
+#         row = []
+#         for j in range(len(matrix_a[0])):
+#             row.append(matrix_a[i][j] - matrix_b[i][j])
+#         result.append(row)
+#     return result
+#
+# def multiply_matrix(matrix_a, matrix_b):
+#     result = []
+#     for i in range(len(matrix_a)):
+#         row = []
+#         for j in range(len(matrix_b[0])):
+#             sum = 0
+#             for k in range(len(matrix_b)):
+#                 sum += matrix_a[i][k] * matrix_b[k][j]
+#             row.append(sum)
+#         result.append(row)
+#     return result
+#
+# A = [[7, 2, 0],
+#     [-7, -2, 1],
+#     [1, 1, 0]]
+#
+# B = [[0, 2, 3],
+#     [1, 0, -2],
+#     [3, 1, 1]]
+#
+# A2=multiply_matrix(A,A)
+# B2=multiply_matrix(B,B)
+# A2subB2=subtract_matrix(A2,B2)
+# AplusB=plus_matrix(A,B)
+# result = multiply_matrix(A2subB2,AplusB)
+#
+# for row in result:
+#     print(row)
 
-def subtract_matrix(matrix_a, matrix_b):
-    result = []
-    for i in range(len(matrix_a)):
-        row = []
-        for j in range(len(matrix_a[0])):
-            row.append(matrix_a[i][j] - matrix_b[i][j])
-        result.append(row)
-    return result
 
-def multiply_matrix(matrix_a, matrix_b):
-    result = []
-    for i in range(len(matrix_a)):
-        row = []
-        for j in range(len(matrix_b[0])):
-            sum = 0
-            for k in range(len(matrix_b)):
-                sum += matrix_a[i][k] * matrix_b[k][j]
-            row.append(sum)
-        result.append(row)
-    return result
+# def create_chessboard_matrix(n):
+#     chessboard = np.zeros((n, n), dtype=int)
+#     chessboard[1::2, ::2] = 1
+#     chessboard[::2, 1::2] = 1
+#     return chessboard
+#
+# print(create_chessboard_matrix(5))
 
-A = [[7, 2, 0],
-    [-7, -2, 1],
-    [1, 1, 0]]
 
-B = [[0, 2, 3],
-    [1, 0, -2],
-    [3, 1, 1]]
+# def create_chessboard_matrix(n):
+#     chessboard = [[0] * n for _ in range(n)]
+#     for i in range(n):
+#         for j in range(n):
+#             if (i + j) % 2 == 1:
+#                 chessboard[i][j] = 1
+#     return chessboard
+#
+#
+# for row in  create_chessboard_matrix(5):
+#     print(row)
 
-A2=multiply_matrix(A,A)
-B2=multiply_matrix(B,B)
-A2subB2=subtract_matrix(A2,B2)
-AplusB=plus_matrix(A,B)
-result = multiply_matrix(A2subB2,AplusB)
+# def create_array_with_ones(n):
+#     array = np.zeros((n, n), dtype=int)
+#     array[:, ::2] = 1
+#     return array
+#
+# print(create_array_with_ones(5))
+#
+# def create_array_with_ones(n):
+#     array = [[1 if i % 2 == 0 else 0 for i in range(n)] for _ in range(n)]
+#     return array
+#
+# for row in create_array_with_ones(5):
+#     print(row)
 
-for row in result:
-    print(row)
+
+# def count_zeros_nonzeros(array):
+#     zeros_count = np.count_nonzero(array == 0)
+#     nonzeros_count = np.count_nonzero(array != 0)
+#     return zeros_count, nonzeros_count
+#
+#
+# # Зчитуємо масив з клавіатури
+# try:
+#     input_array = np.array(list(map(int, input("Введіть масив елементів через пробіл: ").split())))
+#
+#     zeros, nonzeros = count_zeros_nonzeros(input_array)
+#
+#     print(f"Кількість нульових елементів: {zeros}")
+#     print(f"Кількість ненульових елементів: {nonzeros}")
+#
+# except ValueError:
+#     print("Некоректний ввід. Будь ласка, введіть числа через пробіл.")
+
+
+# def count_zeros_nonzeros(array):
+#     zeros_count = sum(1 for element in array if element == 0)
+#     nonzeros_count = sum(1 for element in array if element != 0)
+#     return zeros_count, nonzeros_count
+#
+# try:
+#     input_array = list(map(int, input("Введіть масив елементів через пробіл: ").split()))
+#
+#     zeros, nonzeros = count_zeros_nonzeros(input_array)
+#
+#     print(f"Кількість нульових елементів: {zeros}")
+#     print(f"Кількість ненульових елементів: {nonzeros}")
+#
+# except ValueError:
+#     print("Некоректний ввід. Будь ласка, введіть числа через пробіл.")
+
+
+# def create_array_from_n_to_zero(n):
+#     return np.arange(n, -1, -1)
+#
+# print(create_array_from_n_to_zero(5))
+
+# def create_array_from_n_to_zero_iterative(n):
+#     result_array = []
+#     for i in range(n, -1, -1):
+#         result_array.append(i)
+#     return result_array
+#
+#
+# print(create_array_from_n_to_zero_iterative(10))
+
+# def create_array_with_frame(n):
+#     array = np.zeros((n, n), dtype=int)
+#
+#     array[1:-1, 1:-1] = 1
+#     return array
+#
+# print(create_array_with_frame(10))
+
+# def create_array_with_frame_iterative(n):
+#     array = [[0] * n for _ in range(n)]
+#
+#     for i in range(1, n - 1):
+#         for j in range(1, n - 1):
+#             array[i][j] = 1
+#
+#     return array
+#
+# for row in create_array_with_frame_iterative(5):
+#      print(row)
+
+
+# def create_chessboard_array(size):
+#     chessboard = np.tile([[0, 1], [1, 0]], (size // 2, size // 2))
+#     return chessboard[:size, :size]
+#
+# print(create_chessboard_array(8))
+
+
+# def create_chessboard_array_iterative(size):
+#     chessboard = []
+#     for i in range(size):
+#         row = []
+#         for j in range(size):
+#             value = 0 if (i + j) % 2 == 0 else 1
+#             row.append(value)
+#         chessboard.append(row)
+#     return chessboard
+#
+#
+# for row in create_chessboard_array_iterative(8):
+#       print(row)
+
+# def fill_matrix(n):
+#     matrix = np.zeros((n, n), dtype=int)
+#     matrix[0::2, :] = 1
+#     return matrix
+#
+#
+# print(fill_matrix(10))
+
+# def fill_matrix_iterative(n):
+#     matrix = [[0] * n for _ in range(n)]
+#
+#     for i in range(n):
+#         for j in range(n):
+#             if i % 2 == 0:
+#                 matrix[i][j] = 1
+#
+#     return matrix
+#
+#
+# for row in fill_matrix_iterative(8):
+#       print(row)
+
+
+# def generate_uniform_vector(n):
+#     vector = np.linspace(0, 1, n, endpoint=False)
+#     return np.round(vector, 3)
+#
+# print(generate_uniform_vector(10))
+
+
+# def generate_uniform_vector_iterative(n):
+#     interval_start = 0.01
+#     interval_end = 1
+#     step = (interval_end - interval_start) / n
+#
+#     vector = []
+#     value = interval_start
+#
+#     for _ in range(n):
+#         vector.append(round(value, 3))
+#         value += step
+#
+#     return vector
+#
+#
+# print(generate_uniform_vector_iterative(10))
